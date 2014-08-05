@@ -1,0 +1,26 @@
+﻿@model LunchOrder.Models.Food
+
+@{
+    ViewBag.Title = "Food - " + Model.Title;
+ }
+<h2>@Model.Title</h2>
+<p>
+    <img alt="@Model.Title" src="@Model.FoodArtUrl" />
+</p>
+<div id="food-details">
+    <p>
+        <em>Genre:</em>
+        @Model.Category.Name
+    </p>
+    <p>
+        <em>Artist:</em>
+        @Model.Supplier.Name
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}", Model.Price)
+    </p>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.FoodId }, "")
+    </p>
+</div>

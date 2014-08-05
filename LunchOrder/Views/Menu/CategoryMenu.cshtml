@@ -1,0 +1,9 @@
+﻿@model IEnumerable<LunchOrder.Models.Category>
+
+<ul id="categories">
+    @foreach (var category in Model)
+    {
+        <li>@Html.ActionLink(category.Name,"Browse", "Menu", new { Category = category.Name }, null)
+        </li>
+    }
+</ul>

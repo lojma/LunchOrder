@@ -1,0 +1,21 @@
+﻿@model LunchOrder.Models.Category
+
+@{
+    ViewBag.Title = "Browse Foods";
+}
+ 
+<div class="category">
+    <h3><em>@Model.Name</em> Foods</h3>
+ 
+    <ul id="food-list">
+        @foreach (var food in Model.Foods)
+        {
+            <li>
+                <a href="@Url.Action("Details", new { id = food.FoodId })">
+                    <img alt="@food.Title" src="@food.FoodArtUrl" />
+                    <span>@food.Title</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>

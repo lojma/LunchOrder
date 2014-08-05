@@ -1,0 +1,14 @@
+﻿@model IEnumerable<LunchOrder.Models.Supplier>
+
+@{
+    ViewBag.Title = "Suppliers";
+}
+
+<h3>Browse Suppliers</h3>
+<p>Select from @Model.Count() suppliers :</p>
+<ul>
+    @foreach (var supplier in Model)
+    {
+        <li>@Html.ActionLink(supplier.Name,"Browse", new { supplier = supplier.Name })</li>
+    }
+</ul>
